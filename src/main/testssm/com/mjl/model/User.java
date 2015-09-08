@@ -1,7 +1,7 @@
 package com.mjl.model;
 
 /**
- * Created by jinglingmei on 15/9/7.
+ * Created by alvin on 15/9/7.
  */
 public class User {
     private int id;

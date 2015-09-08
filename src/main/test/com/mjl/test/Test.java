@@ -4,17 +4,12 @@ import com.mjl.dao.IUserDao;
 
 
 import com.mjl.model.User;
-import javafx.application.Application;
-import org.apache.ibatis.io.Resources;
-import org.apache.ibatis.session.SqlSession;
-import org.apache.ibatis.session.SqlSessionFactory;
-import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 
 /**
- * Created by jinglingmei on 15/9/6.
+ * Created by Alvin on 15/9/6.
  */
 public class Test {
    private static ApplicationContext ac;
@@ -28,6 +23,7 @@ public class Test {
         User user = mapper.selectByName("alvin");
 
         System.out.println(user.getId()+":"+"username:"+user.getUsername());
+        System.out.println("password:"+user.getPassword());
 
     }
 }

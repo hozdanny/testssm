@@ -6,13 +6,22 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%
+    String path = request.getContextPath();
+    String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
 <html>
 <head>
     <title></title>
 </head>
 <body>
-<form name="form1" action="login.do" method="post">
-  <table width="300" border="1">
+<br>
+<br>
+<br>
+<br>
+<br>
+<form name="form1" action="/user/login.do" method="post" >
+  <table width="300" border="1" align="center">
   <tr>
     <td colspan="2">登入窗口</td>
   </tr>

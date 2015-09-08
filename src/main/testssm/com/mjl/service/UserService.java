@@ -1,5 +1,7 @@
 package com.mjl.service;
 
+import org.springframework.ui.Model;
+
 /**
  * Created by jinglingmei on 15/9/7.
  */
