@@ -36,7 +36,7 @@
         <servlet-name>dispatcher</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
         <init-param>
-            <!--用于标明spring-mvc.xml配置的位置-->
+            <!--用于标明spring-mvc.xml配置的位置,我是存放在config文件夹下-->
             <param-name>contextConfigLocation</param-name>
             <param-value>classpath*:config/spring-mvc.xml</param-value>
         </init-param>
@@ -47,8 +47,10 @@
         <!-- 拦截所有*.do 的请求,交给DispatcherServlet处理,性能最好 -->
         <url-pattern>*.do</url-pattern>
     </servlet-mapping>
-
-
+        <!--用于设定默认首页-->
+    <welcome-file-list>
+        <welcome-file>login.jsp</welcome-file>
+    </welcome-file-list>
 
 
 

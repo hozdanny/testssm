@@ -2,14 +2,14 @@
 <web-app xmlns="http://java.sun.com/xml/ns/j2ee" version="2.4" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
     <!-- Spring配置 -->
-    <!-- 配置Spring配置文件路径 -->
+    <!-- 配置Spring配置文件路径,好让ContextLoaderListener对其加载与解析-->
     <context-param>
         <param-name>contextConfigLocation</param-name>
         <param-value>
             classpath*:config/applicationContext.xml
         </param-value>
     </context-param>
-    <!-- 配置Spring上下文监听器 -->
+    <!-- 配置Spring上下文监听器,它的作用就是在启动WEB容器时,就会自动装在我们applicationContext.xml配置-->
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
@@ -36,7 +36,7 @@
         <servlet-name>dispatcher</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
         <init-param>
-            <!--用于标明spring-mvc.xml的位置-->
+            <!--用于标明spring-mvc.xml配置的位置,我是存放在config文件夹下-->
             <param-name>contextConfigLocation</param-name>
             <param-value>classpath*:config/spring-mvc.xml</param-value>
         </init-param>
@@ -44,11 +44,13 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>dispatcher</servlet-name>
-        <!-- 拦截所有/* 的请求,交给DispatcherServlet处理,性能最好 -->
+        <!-- 拦截所有*.do 的请求,交给DispatcherServlet处理,性能最好 -->
         <url-pattern>*.do</url-pattern>
     </servlet-mapping>
 
-
+    <welcome-file-list>
+        <welcome-file>login.jsp</welcome-file>
+    </welcome-file-list>
 
 
 
